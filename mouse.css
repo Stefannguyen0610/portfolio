@@ -1,0 +1,83 @@
+   .slider:hover {
+    cursor: none;
+  }
+  .cursor-on .cursor {
+    position: fixed;
+    z-index: 10;
+    pointer-events: none;
+    top: -1rem;
+    left: -1rem;
+    mix-blend-mode: difference;
+  }
+  .cursor-on .cursor > span {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+    background: #3D50FF;
+    transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: scale(1);
+  }
+  .cursor-on .cursor > span.off {
+    transform: scale(0);
+  }
+  .cursor-on .cursor > span.link {
+    transform: scale(1.5);
+    background-color: #FF6C3D;
+  }
+  .cursor-on .cursor > span.link.external:after {
+    content: "↗";
+    display: block;
+    white-space: pre;
+    color: #ffffff;
+    font-weight: 100;
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+    line-height: 1;
+    padding-top: 0.6em;
+  }
+  .cursor-on .cursor > span.light {
+    background: #fff;
+  }
+  .cursor-on .cursor > span.drag, .cursor-on .cursor > span.click, .cursor-on .cursor > span.relol, .cursor-on .cursor > span.new {
+    transform: scale(2.5);
+  }
+  .cursor-on .cursor > span.drag:after, .cursor-on .cursor > span.click:after, .cursor-on .cursor > span.relol:after, .cursor-on .cursor > span.new:after {
+    display: block;
+    content: "";
+    white-space: pre;
+    color: #fff;
+    font-size: 5px;
+    text-align: center;
+    width: 100%;
+    line-height: 1;
+    padding-top: calc((2rem / 2) - 2.5px);
+    color: #fff;
+  }
+  .cursor-on .cursor > span.drag:after {
+    content: "View";
+    font-size: .5rem;
+    font-family: Be Vietnam Pro;
+    font-weight: 500;
+  }
+  .cursor-on .cursor > span.click:after {
+    content: "click\a click";
+  }
+  .cursor-on .cursor > span.relol:after {
+    content: "click\ame";
+    padding-top: calc((2rem / 2) - 5px);
+  }
+  .cursor-on .cursor > span.new:after {
+    content: "new\anew";
+  }
+  .cursor-on:active .cursor > span {
+    transform: scale(0.75);
+  }
+  .cursor-on:active .cursor > span.link {
+    transform: scale(1);
+  }
+  .cursor-on:active .cursor > span.drag, .cursor-on:active .cursor > span.click, .cursor-on:active .cursor > span.relol, .cursor-on:active .cursor > span.new {
+    transform: scale(2);
+  }
+  
